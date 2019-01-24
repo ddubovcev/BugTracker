@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f434eec3-96ae-4552-a242-31ca4365f964">
+  <name>БазаЗнанийПрактики1С</name>
+  <synonym>
+    <key>ru</key>
+    <value>Bug tracker</value>
+  </synonym>
+  <comment></comment>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="3f8f354a-8ab6-4bec-9591-53feb08b5e53"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="5adfd487-def9-4ae6-ba1a-b754742271a7"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="9a407233-5913-4485-b95d-f431a89d67e7"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="da042c8c-b249-4615-b431-b0664592a38c"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="d049e65c-c041-46cf-b6dc-f146e7bcea52"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="cb2a3440-f228-4278-8e7b-e43441982314"/>
+  <namePrefix></namePrefix>
+  <configurationExtensionCompatibilityMode>8.3.11</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <scriptVariant>Russian</scriptVariant>
+  <vendor></vendor>
+  <version></version>
+  <updateCatalogAddress></updateCatalogAddress>
+  <defaultLanguage>Language.Русский</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <compatibilityMode>8.3.11</compatibilityMode>
+  <languages uuid="5bf4a564-4c4d-4e36-958c-c80d1cc4f698">
+    <name>Русский</name>
+    <synonym>
+      <key>ru</key>
+      <value>Русский</value>
+    </synonym>
+    <comment></comment>
+    <languageCode>ru</languageCode>
+  </languages>
+  <subsystems>Subsystem.БазаЗнаний</subsystems>
+  <subsystems>Subsystem.Руководитель</subsystems>
+  <subsystems>Subsystem.НСИ</subsystems>
+  <subsystems>Subsystem.Сервис</subsystems>
+  <commonPictures>CommonPicture.ДлительнаяОперация48</commonPictures>
+  <commonPictures>CommonPicture.РазделНСИ16</commonPictures>
+  <commonPictures>CommonPicture.РазделАдминистрирование16</commonPictures>
+  <commonPictures>CommonPicture.РазделКадры16</commonPictures>
+  <roles>Role.Администратор</roles>
+  <roles>Role.ПросмотрДанныхJIRA</roles>
+  <roles>Role.Консультант</roles>
+  <commonTemplates>CommonTemplate.Скрипт</commonTemplates>
+  <commonModules>CommonModule.ОбщегоНазначенияКлиент</commonModules>
+  <commonModules>CommonModule.ОбщегоНазначенияСервер</commonModules>
+  <commonModules>CommonModule.ОбменДаннымиJIRA</commonModules>
+  <catalogs>Catalog.Ошибки</catalogs>
+  <catalogs>Catalog.Пользователи</catalogs>
+  <enums>Enum.ИнтернетПротокол</enums>
+  <reports>Report.АнализДанныхJIRA</reports>
+  <reports>Report.Простой</reports>
+  <reports>Report.НеВосьмерки</reports>
+  <dataProcessors>DataProcessor.РабочийСтолПользователя</dataProcessors>
+  <dataProcessors>DataProcessor.КонсольЗаданий</dataProcessors>
+  <dataProcessors>DataProcessor.КонтролерКода</dataProcessors>
+  <dataProcessors>DataProcessor.СозданиеОбъектовПоДаннымJIRA</dataProcessors>
+  <informationRegisters>InformationRegister.Обсуждение</informationRegisters>
+  <informationRegisters>InformationRegister.ПолучателиУведомлений</informationRegisters>
+  <informationRegisters>InformationRegister.Уведомления</informationRegisters>
+</mdclass:Configuration>

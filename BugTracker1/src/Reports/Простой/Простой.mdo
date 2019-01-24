@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9fffec05-cc3e-44c6-8526-db25937d1a2e">
+  <producedTypes>
+    <objectType typeId="987271ef-5ccb-4d3a-9efe-15b74b0b8c5a" valueTypeId="ca62e979-eaa3-46da-8beb-cfe6bee737bc"/>
+    <managerType typeId="e8363299-108a-4149-926a-c26406637005" valueTypeId="da952c63-7178-45d7-9b11-cb14935ff8fd"/>
+  </producedTypes>
+  <name>Простой</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загруженные записи о работе (без группировок) </value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>Report.Простой.Form.ФормаОтчета</defaultForm>
+  <mainDataCompositionSchema>Report.Простой.Template.ОсновнаяСхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <forms uuid="c43c8427-c39d-4ebd-a96e-871928fe63de">
+    <name>ФормаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="61485813-75e8-4b02-86b8-ec16f132b5ff">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <comment></comment>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:Report>

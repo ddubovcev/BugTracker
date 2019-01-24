@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="435ba7e1-9197-43da-b62e-9e94bfec798e">
+  <name>БазаЗнаний</name>
+  <synonym>
+    <key>ru</key>
+    <value>База знаний</value>
+  </synonym>
+  <comment></comment>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <content>CommonTemplate.Скрипт</content>
+  <content>Catalog.Ошибки</content>
+  <content>InformationRegister.Обсуждение</content>
+  <content>InformationRegister.ПолучателиУведомлений</content>
+  <content>InformationRegister.Уведомления</content>
+  <content>DataProcessor.РабочийСтолПользователя</content>
+  <content>Report.АнализДанныхJIRA</content>
+  <content>DataProcessor.СозданиеОбъектовПоДаннымJIRA</content>
+  <content>Report.Простой</content>
+  <content>Report.НеВосьмерки</content>
+</mdclass:Subsystem>

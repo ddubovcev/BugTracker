@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b1cd7574-e282-4dc5-8364-dff166ca0491">
+  <producedTypes>
+    <selectionType typeId="df761283-1720-4e57-93fe-da35955abf52" valueTypeId="36ba4eaf-5847-4180-bdfd-fd16e305d613"/>
+    <listType typeId="5d6e8cda-b604-4a4a-b26d-b7b0ecd67b50" valueTypeId="49075904-495e-47ab-b568-c2e590e18cfe"/>
+    <managerType typeId="3d08edbd-f1ee-43e1-b5f0-c2ead819d50e" valueTypeId="3e5070eb-92d8-474f-9abe-81cd67a80cb8"/>
+    <recordSetType typeId="ededcf2f-6209-48df-a82c-e3b3f6d177a9" valueTypeId="9b9419ac-6688-4771-827a-17220b5675ea"/>
+    <recordKeyType typeId="8b77de6d-a8a4-4120-a6ea-8aaa7d40dff6" valueTypeId="348a2401-80e4-448b-b585-b1b843ae0324"/>
+    <recordType typeId="597808b2-6687-4319-b5f4-6f2c59eee2b8" valueTypeId="520491bf-bbeb-49ad-a06c-9704afa42f5d"/>
+    <recordManagerType typeId="16fdd40e-4635-4557-b41b-4a9579dc26b1" valueTypeId="a37b9b16-5b4d-4229-a655-9a72cdd05b3c"/>
+  </producedTypes>
+  <name>Обсуждение</name>
+  <synonym>
+    <key>ru</key>
+    <value>Журнал обсуждений (полный)</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.Обсуждение.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.Обсуждение.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="08b8e33e-cb70-4330-aaa3-e2faca8ec76d">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <multiLine>true</multiLine>
+    <extendedEdit>true</extendedEdit>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="5fffeeee-26c5-4c3b-a4e3-a04d5abd89f0">
+    <name>Ошибка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ошибка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Ошибки</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="10bd6bc0-2a24-4ef0-a04e-9007941173d9">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="9ccdf046-b9d0-4306-8bad-c032c81c9286">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="34d2ecf8-e97b-47b6-b90f-de2290f51ff9">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="0a97efdb-1332-4392-8154-9e813bcdbdc3">
+    <name>ОткрытьОбсуждение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обсуждение</value>
+    </synonym>
+    <comment></comment>
+    <group>FormNavigationPanelSeeAlso</group>
+    <commandParameterType>
+      <types>CatalogRef.Ошибки</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+  <commands uuid="7c5a34ae-701c-4b94-a70f-bcd331da34b2">
+    <name>ОткрытьМоиОбсуждения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мои обсуждения</value>
+    </synonym>
+    <comment></comment>
+    <group>NavigationPanelOrdinary</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:InformationRegister>

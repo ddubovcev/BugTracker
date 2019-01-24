@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0641403f-5b18-4b82-b833-152d39ec2235">
+  <producedTypes>
+    <objectType typeId="dbb72e0d-fbdb-4bac-aa37-caa1691dad1a" valueTypeId="3fce0761-9a03-4a48-9eb0-1c55d67aeab1"/>
+    <managerType typeId="31460e7f-ac33-4788-97f5-1e67e9266c2c" valueTypeId="f6f70e53-5b3e-448b-af6b-33c0ad10e1f4"/>
+  </producedTypes>
+  <name>АнализДанныхJIRA</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загруженные записи о работе (с группировками)</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>Report.АнализДанныхJIRA.Form.ФормаОтчета</defaultForm>
+  <mainDataCompositionSchema>Report.АнализДанныхJIRA.Template.ОсновнаяСхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <forms uuid="ba0d47f0-746f-4a9d-a195-2c3cd53f3921">
+    <name>ФормаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="e3714f4c-76a1-4e97-9394-6b51f32f6089">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <comment></comment>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:Report>

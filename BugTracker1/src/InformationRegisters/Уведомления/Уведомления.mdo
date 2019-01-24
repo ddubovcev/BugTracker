@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="72c08133-a696-4410-991c-9d3e4cafac86">
+  <producedTypes>
+    <selectionType typeId="77f13075-5384-4cd7-bd8a-2d15d1d01ec3" valueTypeId="36066757-062d-4240-af94-b22be22d0f5e"/>
+    <listType typeId="e6af73be-828c-448e-94e1-f4c9a837550d" valueTypeId="f5fc343c-5141-419b-8c5f-8a14feedc697"/>
+    <managerType typeId="5b0fb46d-228c-4439-a059-6fd6c8fbb49e" valueTypeId="3e2a3f65-61fe-441e-94a0-c13ec4c43f5e"/>
+    <recordSetType typeId="05b3ba60-5fae-4cac-9465-ed2f3f7dcbaf" valueTypeId="cf99f6b6-2881-4d18-9663-c7357596f822"/>
+    <recordKeyType typeId="9e007e66-58b3-4845-adb7-dbc9d36f777c" valueTypeId="66120a64-f2f6-4633-aa4b-966c7e105ab2"/>
+    <recordType typeId="0ef05ccc-8cf4-490b-96ef-2f8ab83cdd14" valueTypeId="9ad2ea96-7c9f-44a0-9933-1a2cc57f2117"/>
+    <recordManagerType typeId="33e242c0-2ee8-43e0-885b-84655e6aa079" valueTypeId="d5c9aba0-99c1-40c6-b1c2-f0a0bde42464"/>
+  </producedTypes>
+  <name>Уведомления</name>
+  <synonym>
+    <key>ru</key>
+    <value>Журнал уведомлений (полный)</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.Уведомления.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <attributes uuid="73f3ac4c-b956-439a-8c35-91b33d37c8d8">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <mask></mask>
+    <multiLine>true</multiLine>
+    <extendedEdit>true</extendedEdit>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+  </attributes>
+  <dimensions uuid="884f7d06-a7d6-4bc4-bb87-727ec9af4a0c">
+    <name>Ошибка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ошибка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Ошибки</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3afed198-bd57-4dd6-9d0e-015324a469e7">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="56147df1-b8af-4590-aafa-b5abdc2fe680">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="227259a4-7037-47b2-872d-1f13814e526d">
+    <name>ОткрытьМоиУведомления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Мои уведомления</value>
+    </synonym>
+    <comment></comment>
+    <group>NavigationPanelOrdinary</group>
+    <commandParameterType/>
+    <representation>Auto</representation>
+    <shortcut></shortcut>
+  </commands>
+</mdclass:InformationRegister>

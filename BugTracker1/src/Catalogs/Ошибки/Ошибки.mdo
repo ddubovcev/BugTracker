@@ -261,19 +261,6 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <attributes uuid="48142881-f9ae-412c-ac40-1680248c2b3c">
-    <name>ДатаНачалаРаботыПоЗадаче</name>
-    <synonym>
-      <key>ru</key>
-      <value>Дата начала работы по задаче</value>
-    </synonym>
-    <type>
-      <types>Date</types>
-      <dateQualifiers/>
-    </type>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
   <tabularSections uuid="4f0d96b1-8d6e-4666-a818-a231fe0e8065">
     <producedTypes>
       <objectType typeId="5b8487b4-5332-4a52-857c-29d80e83b2e6" valueTypeId="33f49d33-5449-4e60-9d0c-af7e9a01d90c"/>

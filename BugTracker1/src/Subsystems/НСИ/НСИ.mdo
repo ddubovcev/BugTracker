@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="69ef901e-35be-4874-80ca-ca5902a69317">
+  <name>НСИ</name>
+  <synonym>
+    <key>ru</key>
+    <value>НСИ</value>
+  </synonym>
+  <comment></comment>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <picture xsi:type="core:PictureRef">
+    <picture>CommonPicture.РазделНСИ16</picture>
+  </picture>
+  <content>85e558df-32fa-4bc5-ab6b-df438ed222e8</content>
+  <content>97984266-a2de-41d3-a165-b89711f94500</content>
+  <subsystems>Основное</subsystems>
+  <subsystems>Уведомления</subsystems>
+</mdclass:Subsystem>

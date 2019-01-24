@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Role xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2163c6f9-0162-4761-a13e-917a4952ba70">
+  <name>ПросмотрДанныхJIRA</name>
+  <synonym>
+    <key>ru</key>
+    <value>Просмотр данных JIRA</value>
+  </synonym>
+  <comment></comment>
+</mdclass:Role>
