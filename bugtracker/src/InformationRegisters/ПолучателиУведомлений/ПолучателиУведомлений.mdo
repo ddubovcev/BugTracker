@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="124819b5-0f5c-45fd-82a1-dfaff383e3e2">
+  <producedTypes>
+    <selectionType typeId="8c534a3d-5c18-4637-9711-ba6b5c908cca" valueTypeId="12e421b7-3387-49db-8fea-7794f1d3ee0d"/>
+    <listType typeId="673a7bb7-b62f-4d94-8177-1f85c2054cca" valueTypeId="f1b1778c-7a2f-45b3-9332-a1fb0fec70e3"/>
+    <managerType typeId="436087cd-380f-4cad-9a9c-83a0fc33f4ca" valueTypeId="15b913df-965b-43f1-b004-04cd84838a3e"/>
+    <recordSetType typeId="ac8049c0-3ffe-4fdd-95bb-94cdddd4edce" valueTypeId="cfe8d244-f471-4ff1-a980-bc76fa26c073"/>
+    <recordKeyType typeId="3f9c35d1-ef9a-48fb-b34c-65180e49f1a5" valueTypeId="b5fb5c5d-d4fb-4b05-a7fa-0ee56c922889"/>
+    <recordType typeId="6bccbb56-b3ce-4c46-ba3a-09f704ef845d" valueTypeId="c7ba32e0-94c2-4476-adac-fa842a9eaa6b"/>
+    <recordManagerType typeId="aeaec125-0ceb-4bb6-bbb1-f628bd67935c" valueTypeId="552f3939-718c-434a-b28e-3a0053ad87cc"/>
+  </producedTypes>
+  <name>ПолучателиУведомлений</name>
+  <synonym>
+    <key>ru</key>
+    <value>Подписка на уведомления</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="bef9d144-e169-4f6a-ba1a-2f3539b28811">
+    <name>Ошибка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ошибка</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Ошибки</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="04bab957-86df-4028-ab60-bf21c4b08332">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

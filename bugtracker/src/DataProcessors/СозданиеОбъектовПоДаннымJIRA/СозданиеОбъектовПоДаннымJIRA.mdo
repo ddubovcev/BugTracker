@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e0b5e862-9803-4756-9334-8c8ea68899e2">
+  <producedTypes>
+    <objectType typeId="f787a703-59ba-4731-a8ce-7d943220768c" valueTypeId="9e7da059-96f5-4e90-a707-31b5847acd8e"/>
+    <managerType typeId="acb3e2f4-e48d-4af4-a73e-acaaaae2b78d" valueTypeId="f1a597ab-4655-43aa-9e02-8d7476d0ce61"/>
+  </producedTypes>
+  <name>СозданиеОбъектовПоДаннымJIRA</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка данных из Jira</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.СозданиеОбъектовПоДаннымJIRA.Form.Форма</defaultForm>
+  <attributes uuid="54dba02b-36ac-48fd-982d-beb41664ff6e">
+    <name>НачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="73d3f652-a96c-4fc7-a5c9-300474094be9">
+    <name>КонецПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Конец периода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <forms uuid="3112d818-a669-4acd-a3db-a62f55f9d8c5">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

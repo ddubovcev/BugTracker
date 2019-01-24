@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ce104a38-0dfa-4275-80d1-6f153ea3e315">
+  <producedTypes>
+    <objectType typeId="b9c95803-592a-46dd-97ee-7d7df05d3ce6" valueTypeId="09dac8e8-5c4c-4bff-b5a3-7bd2d7137e61"/>
+    <managerType typeId="ce96d29e-717d-4cce-9a42-ea5172f4eb27" valueTypeId="60b3c049-fe49-4b7b-b74e-c4ee5b0f4f99"/>
+  </producedTypes>
+  <name>КонтролерКода</name>
+  <synonym>
+    <key>ru</key>
+    <value>Контролер кода</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.КонтролерКода.Form.Форма</defaultForm>
+  <attributes uuid="c4b13d6c-7811-4308-b70c-1ef4a5634418">
+    <name>АдресВнешнейОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес внешней обработки</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="ed80c630-d824-4415-b85d-c75625f547e1">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="62809b55-2752-414a-8eed-c28b868e1299">
+    <name>ПодборИзGitHub</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подбор из GitHub</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="d2abc6dd-d1c6-471b-b18d-100e84775d1e">
+    <name>КлючевыеСловаСекций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ключевые слова секций</value>
+    </synonym>
+    <comment></comment>
+  </templates>
+</mdclass:DataProcessor>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="15531cab-b3e5-42a3-8cea-73e78c76000e">
+  <producedTypes>
+    <objectType typeId="41e20252-7dea-4295-ad6e-04fc27bd446f" valueTypeId="f9c7e4f9-2f67-4bdd-ac00-06cf018fec7a"/>
+    <managerType typeId="9370da33-4490-45ce-a507-ddb33a6c7f5b" valueTypeId="f1ac982c-b80f-47b6-82f9-d5f58f26e814"/>
+  </producedTypes>
+  <name>НеВосьмерки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Не восьмерки</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>Report.НеВосьмерки.Form.ФормаОтчета</defaultForm>
+  <mainDataCompositionSchema>Report.НеВосьмерки.Template.ОсновнаяСхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <forms uuid="1dd9f4b6-8cc9-4247-85be-0d30a3ee41be">
+    <name>ФормаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <comment></comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="4caad253-f20d-4961-9771-7cb23332d36d">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <comment></comment>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:Report>

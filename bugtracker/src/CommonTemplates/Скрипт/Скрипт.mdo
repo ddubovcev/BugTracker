@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonTemplate xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0b40a344-0246-476e-880f-6b01f0b30059">
+  <name>Скрипт</name>
+  <synonym>
+    <key>ru</key>
+    <value>Скрипт</value>
+  </synonym>
+  <comment></comment>
+  <templateType>TextDocument</templateType>
+</mdclass:CommonTemplate>

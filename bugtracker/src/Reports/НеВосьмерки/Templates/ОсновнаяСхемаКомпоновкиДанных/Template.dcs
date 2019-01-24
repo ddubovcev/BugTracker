@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>АвторJIRA</dataPath>
+			<field>АвторJIRA</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СсылкаJIRA</dataPath>
+			<field>СсылкаJIRA</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ссылка JIRA</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>EpicLinkJIRA</dataPath>
+			<field>EpicLinkJIRA</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Epic link JIRA</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаСоздания</dataPath>
+			<field>ДатаСоздания</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата создания</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ДатаРаботыJIRA</dataPath>
+			<field>ДатаРаботыJIRA</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата работы JIRA</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КомпонентJIRA</dataPath>
+			<field>КомпонентJIRA</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИсполнительJIRA</dataPath>
+			<field>ИсполнительJIRA</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЧасыРаботыJIRA</dataPath>
+			<field>ЧасыРаботыJIRA</field>
+			<appearance>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>Формат</dcscor:parameter>
+					<dcscor:value xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ЧН=0</v8:content>
+						</v8:item>
+					</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ошибка</dataPath>
+			<field>Ошибка</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ошибка</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Пользователь</dataPath>
+			<field>Пользователь</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователь</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Пользователи.Ссылка КАК Ссылка,
+	Пользователи.JiraUserName КАК JiraUserName,
+	&amp;ПредыдущийДень КАК ПредыдущийДень,
+	НАЧАЛОПЕРИОДА(&amp;ТекущаяДата, ДЕНЬ) КАК ТекущаяДата
+ПОМЕСТИТЬ СписокПользователей
+ИЗ
+	Справочник.Пользователи КАК Пользователи
+ГДЕ
+	НЕ Пользователи.ПометкаУдаления
+	И НЕ Пользователи.НеУчаствуетВПроверкеТекстаКода
+	И Пользователи.JiraUserName &lt;&gt; ""
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВЫРАЗИТЬ(Ошибки.СсылкаJIRA КАК СТРОКА(300)) КАК СсылкаJIRA,
+	ВЫРАЗИТЬ(Ошибки.EpicLinkJIRA КАК СТРОКА(300)) КАК EpicLinkJIRA,
+	Ошибки.КомпонентJIRA КАК КомпонентJIRA,
+	Ошибки.АвторJIRA КАК АвторJIRA,
+	Ошибки.ИсполнительJIRA КАК ИсполнительJIRA,
+	НАЧАЛОПЕРИОДА(Ошибки.ДатаРаботыJIRA, ДЕНЬ) КАК ДатаРаботыJIRA,
+	Ошибки.ЧасыРаботыJIRA КАК ЧасыРаботыJIRA,
+	НАЧАЛОПЕРИОДА(Ошибки.ДатаСоздания, ДЕНЬ) КАК ДатаСоздания,
+	Ошибки.Ссылка КАК Ошибка
+ПОМЕСТИТЬ ВТ
+ИЗ
+	Справочник.Ошибки КАК Ошибки
+ГДЕ
+	НЕ Ошибки.ПометкаУдаления
+	И Ошибки.Ссылка В ИЕРАРХИИ (ЗНАЧЕНИЕ(Справочник.Ошибки.ЗагруженоИзJIRA), ЗНАЧЕНИЕ(Справочник.Ошибки.ПодготовкаКСпециалистуПоПлатформе))
+	И Ошибки.ДатаРаботыJIRA МЕЖДУ &amp;ПредыдущийДень И &amp;ТекущаяДата
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СписокПользователей.Ссылка КАК Пользователь,
+	СписокПользователей.JiraUserName КАК JiraUserName,
+	ЕСТЬNULL(ВТ.СсылкаJIRA, "") КАК СсылкаJIRA,
+	ЕСТЬNULL(ВТ.EpicLinkJIRA, "") КАК EpicLinkJIRA,
+	ЕСТЬNULL(ВТ.КомпонентJIRA, "") КАК КомпонентJIRA,
+	ЕСТЬNULL(ВТ.АвторJIRA, "") КАК АвторJIRA,
+	ЕСТЬNULL(ВТ.ИсполнительJIRA, "") КАК ИсполнительJIRA,
+	ЕСТЬNULL(ВТ.ЧасыРаботыJIRA, 0) КАК ЧасыРаботыJIRA,
+	ЕСТЬNULL(ВТ.ДатаСоздания, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)) КАК ДатаСоздания,
+	ЕСТЬNULL(ВТ.Ошибка, ЗНАЧЕНИЕ(Справочник.Ошибки.ПустаяСсылка)) КАК Ошибка,
+	СписокПользователей.ПредыдущийДень КАК ДатаРаботыJIRA
+ПОМЕСТИТЬ ДанныеИзJira
+ИЗ
+	СписокПользователей КАК СписокПользователей
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ КАК ВТ
+		ПО СписокПользователей.JiraUserName = ВТ.ИсполнительJIRA
+			И СписокПользователей.ПредыдущийДень = ВТ.ДатаРаботыJIRA
+
+ОБЪЕДИНИТЬ ВСЕ
+
+ВЫБРАТЬ
+	СписокПользователей.Ссылка,
+	СписокПользователей.JiraUserName,
+	ЕСТЬNULL(ВТ.СсылкаJIRA, ""),
+	ЕСТЬNULL(ВТ.EpicLinkJIRA, ""),
+	ЕСТЬNULL(ВТ.КомпонентJIRA, ""),
+	ЕСТЬNULL(ВТ.АвторJIRA, ""),
+	ЕСТЬNULL(ВТ.ИсполнительJIRA, ""),
+	ЕСТЬNULL(ВТ.ЧасыРаботыJIRA, 0),
+	ЕСТЬNULL(ВТ.ДатаСоздания, ДАТАВРЕМЯ(1, 1, 1, 0, 0, 0)),
+	ЕСТЬNULL(ВТ.Ошибка, ЗНАЧЕНИЕ(Справочник.Ошибки.ПустаяСсылка)),
+	СписокПользователей.ТекущаяДата
+ИЗ
+	СписокПользователей КАК СписокПользователей
+		ЛЕВОЕ СОЕДИНЕНИЕ ВТ КАК ВТ
+		ПО СписокПользователей.JiraUserName = ВТ.ИсполнительJIRA
+			И СписокПользователей.ТекущаяДата = ВТ.ДатаРаботыJIRA
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	СУММА(ДанныеИзJira.ЧасыРаботыJIRA) КАК ЧасыРаботыJIRA,
+	ДанныеИзJira.ДатаРаботыJIRA КАК ДатаРаботыJIRA,
+	ДанныеИзJira.Пользователь КАК Пользователь
+ПОМЕСТИТЬ ЧасыJira
+ИЗ
+	ДанныеИзJira КАК ДанныеИзJira
+
+СГРУППИРОВАТЬ ПО
+	ДанныеИзJira.ДатаРаботыJIRA,
+	ДанныеИзJira.Пользователь
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ЧасыJira.ДатаРаботыJIRA КАК ДатаРаботыJIRA,
+	ЧасыJira.Пользователь КАК Пользователь
+ПОМЕСТИТЬ НеВосьмерки
+ИЗ
+	ЧасыJira КАК ЧасыJira
+ГДЕ
+	ВЫБОР
+			КОГДА ЧасыJira.ДатаРаботыJIRA = &amp;ПредыдущийДень
+				ТОГДА ЧасыJira.ЧасыРаботыJIRA &lt;&gt; 8
+			ИНАЧЕ ЧасыJira.ЧасыРаботыJIRA &lt;&gt; 4
+		КОНЕЦ
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ДанныеИзJira.СсылкаJIRA КАК СсылкаJIRA,
+	ДанныеИзJira.EpicLinkJIRA КАК EpicLinkJIRA,
+	ДанныеИзJira.КомпонентJIRA КАК КомпонентJIRA,
+	ДанныеИзJira.АвторJIRA КАК АвторJIRA,
+	ДанныеИзJira.ИсполнительJIRA КАК ИсполнительJIRA,
+	ДанныеИзJira.ДатаРаботыJIRA КАК ДатаРаботыJIRA,
+	ДанныеИзJira.ЧасыРаботыJIRA КАК ЧасыРаботыJIRA,
+	ДанныеИзJira.Пользователь КАК Пользователь,
+	ДанныеИзJira.ДатаСоздания КАК ДатаСоздания,
+	ДанныеИзJira.Ошибка КАК Ошибка
+ИЗ
+	НеВосьмерки КАК НеВосьмерки
+		ЛЕВОЕ СОЕДИНЕНИЕ ДанныеИзJira КАК ДанныеИзJira
+		ПО НеВосьмерки.ДатаРаботыJIRA = ДанныеИзJira.ДатаРаботыJIRA
+			И НеВосьмерки.Пользователь = ДанныеИзJira.Пользователь</query>
+	</dataSet>
+	<parameter>
+		<name>ТекущаяДата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Текущая дата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<expression>КонецПериода(ТекущаяДата(),"День")</expression>
+	</parameter>
+	<parameter>
+		<name>ПредыдущийДень</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Предыдущий день</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>false</useRestriction>
+		<expression>НачалоПериода(ВЫБОР	КОГДА ДЕНЬНЕДЕЛИ(ТекущаяДата()) = 1			ТОГДА ДОБАВИТЬКДАТЕ(ТекущаяДата(), "ДЕНЬ", -3)		ИНАЧЕ ДОБАВИТЬКДАТЕ(ТекущаяДата(), "ДЕНЬ", -1)	КОНЕЦ, "День")</expression>
+	</parameter>
+	<template>
+		<name>Макет1</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Пользователь</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата работы JIRA</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Часы работы</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Компонент</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Epic link JIRA</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Дата создания</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Автор</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Ссылка JIRA</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+	</template>
+	<template>
+		<name>Макет2</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Пользователь</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Пользователь</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ДатаРаботы</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Ошибка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ЧасыРаботы</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Ошибка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Компонент</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Ошибка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">EpiclinkJIRA</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Ошибка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ДатаСоздания</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Ошибка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">Автор</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">Ошибка</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">СсылкаJIRA</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>Расшифровка</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:Parameter">СсылкаJIRA</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Пользователь</dcsat:name>
+			<dcsat:expression>Пользователь</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:DetailsAreaTemplateParameter">
+			<dcsat:name>Ошибка</dcsat:name>
+			<dcsat:fieldExpression>
+				<dcsat:field>Ошибка</dcsat:field>
+				<dcsat:expression>Ошибка</dcsat:expression>
+			</dcsat:fieldExpression>
+			<dcsat:mainAction>OpenValue</dcsat:mainAction>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ДатаРаботы</dcsat:name>
+			<dcsat:expression>ДатаРаботыJIRA</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ЧасыРаботы</dcsat:name>
+			<dcsat:expression>ЧасыРаботыJIRA</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Компонент</dcsat:name>
+			<dcsat:expression>КомпонентJIRA</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>EpiclinkJIRA</dcsat:name>
+			<dcsat:expression>EpiclinkJIRA</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ДатаСоздания</dcsat:name>
+			<dcsat:expression>ДатаСоздания</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>Автор</dcsat:name>
+			<dcsat:expression>АвторJIRA</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>СсылкаJIRA</dcsat:name>
+			<dcsat:expression>СсылкаJIRA</dcsat:expression>
+		</parameter>
+	</template>
+	<groupTemplate>
+		<groupName>ДетальныеЗаписи</groupName>
+		<templateType>Header</templateType>
+		<template>Макет2</template>
+	</groupTemplate>
+	<groupHeaderTemplate>
+		<groupName>ДетальныеЗаписи</groupName>
+		<templateType>Header</templateType>
+		<template>Макет1</template>
+	</groupHeaderTemplate>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:name>ДетальныеЗаписи</dcsset:name>
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto">
+						<dcsset:use>false</dcsset:use>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Пользователь</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДатаРаботыJIRA</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ЧасыРаботыJIRA</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>КомпонентJIRA</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>EpicLinkJIRA</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>ДатаСоздания</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>АвторJIRA</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>СсылкаJIRA</dcsset:field>
+					</dcsset:item>
+					<dcsset:item xsi:type="dcsset:SelectedItemField">
+						<dcsset:field>Ошибка</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

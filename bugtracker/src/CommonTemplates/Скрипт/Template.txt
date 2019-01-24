@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html><head>
+<meta content="text/html; charset=UTF-8" http-equiv=Content-type />
+<style type=text/css>
+#%&styles#%&
+</style>
+</head>
+<body>
+<script type=text/javascript>
+<!--
+
+function textToHtml1CScript(text)
+{
+  var keywords = new Array();
+  keywords[keywords.length] = 'процедура';
+  keywords[keywords.length] = 'procedure';
+  keywords[keywords.length] = 'конецпроцедуры';
+  keywords[keywords.length] = 'endprocedure';
+  keywords[keywords.length] = 'функция';
+  keywords[keywords.length] = 'function';
+  keywords[keywords.length] = 'конецфункции';
+  keywords[keywords.length] = 'endfunction';
+  keywords[keywords.length] = 'для';
+  keywords[keywords.length] = 'for';
+  keywords[keywords.length] = 'каждого';
+  keywords[keywords.length] = 'each';
+  keywords[keywords.length] = 'из';
+  keywords[keywords.length] = 'in';
+  keywords[keywords.length] = 'конеццикла';
+  keywords[keywords.length] = 'enddo';
+  keywords[keywords.length] = 'пока';
+  keywords[keywords.length] = 'while';
+  keywords[keywords.length] = 'цикл';
+  keywords[keywords.length] = 'do';
+  keywords[keywords.length] = 'по';
+  keywords[keywords.length] = 'to';
+  keywords[keywords.length] = 'продолжить';
+  keywords[keywords.length] = 'continue';
+  keywords[keywords.length] = 'прервать';
+  keywords[keywords.length] = 'break';
+  keywords[keywords.length] = 'конецесли';
+  keywords[keywords.length] = 'endif';
+  keywords[keywords.length] = 'если';
+  keywords[keywords.length] = 'if';
+  keywords[keywords.length] = 'тогда';
+  keywords[keywords.length] = 'then';
+  keywords[keywords.length] = 'иначе';
+  keywords[keywords.length] = 'else';
+  keywords[keywords.length] = 'иначеесли';
+  keywords[keywords.length] = 'elsif';
+  keywords[keywords.length] = 'перем';
+  keywords[keywords.length] = 'var';
+  keywords[keywords.length] = 'экспорт';
+  keywords[keywords.length] = 'export';
+  keywords[keywords.length] = 'возврат';
+  keywords[keywords.length] = 'return';
+  keywords[keywords.length] = 'новый';
+  keywords[keywords.length] = 'new';
+  keywords[keywords.length] = 'попытка';
+  keywords[keywords.length] = 'try';
+  keywords[keywords.length] = 'исключение';
+  keywords[keywords.length] = 'except';
+  keywords[keywords.length] = 'конецпопытки';
+  keywords[keywords.length] = 'endtry';
+  keywords[keywords.length] = 'вызватьисключение';
+  keywords[keywords.length] = 'raise';
+  keywords[keywords.length] = 'знач';
+  keywords[keywords.length] = 'val';
+  
+  var operators = new Array();
+  operators[operators.length] = 'истина';
+  operators[operators.length] = 'true';
+  operators[operators.length] = 'ложь';
+  operators[operators.length] = 'false';
+  operators[operators.length] = 'или';
+  operators[operators.length] = 'or';
+  operators[operators.length] = 'и';
+  operators[operators.length] = 'and';
+  operators[operators.length] = 'не';
+  operators[operators.length] = 'not';
+  operators[operators.length] = 'неопределено';
+  operators[operators.length] = 'undefined';
+    
+  var result =  
+    ('<p>&shy;'+
+    text.
+      replace(/;/g, '&semicolon_char;').
+      replace(/&/g, '&amp;').
+      replace(/&amp;semicolon_char;/g, '&semicolon_char;').
+      replace(/</g, '&lt;').
+      replace(/>/g, '&gt;').
+      replace(/"/g, '&quot;').
+      replace(/\n\r/g, '</p><p>&shy;').
+      replace(/\n/g, '</p><p>&shy;').
+      replace(/\r/g, '').
+      replace(/\t/g, '&emsp;').
+      replace(/<spanclass=/g, '<span class=').
+      replace(/(\/\/.*?)(<\/p><p[^>]*>|$)/g, '<span class="comment">$1</span>$2').
+      replace(/(&amp;[^\s\(\)\[\]<>&]*)/g, '<span class="attribute">$1</span>').
+      replace(/(#.*?)(<\/p><p[^>]*>)/g, '<span class="macro">$1</span>$2').
+      replace(/(&quot;(?:(?:.(?!<\/p>))+|))<span\s+class\s?=\s?["']?(?:comment|macro)["']?>((?:(?:.(?!<\/p>))+|)&quot;(?:(?:.(?!<\/p>))+|))<\/span>(<\/p>|$)/gi, '$1$2$3').
+      replace(/(&quot;(?:(?:.(?!<\/p>))+|))<span\s+class\s?=\s?["']?(?:attribute)["']?>((?:<span[^>]*>(?:<span[^>]*>[^<>]*<\/span>|[^<>]*)*<\/span>|[^<>]+)+)<\/span>/gi, '$1$2').
+      replace(new RegExp('(^|[^_а-яa-z0-9#])('+keywords.join('|')+')($|[^_а-яa-z0-9_])','ig'), '$1<span class="key">$2</span>$3').
+      replace(new RegExp('(^|[^_а-яa-z0-9#<>])('+keywords.join('|')+')($|[^_а-яa-z0-9_<>])','ig'), '$1<span class="key">$2</span>$3').
+      replace(new RegExp('(^|[^_а-яa-z0-9#])('+operators.join('|')+')($|[^_а-яa-z0-9_])','ig'), '$1<span class="operator">$2</span>$3').
+      replace(new RegExp('(^|[^_а-яa-z0-9#<>])('+operators.join('|')+')($|[^_а-яa-z0-9_<>])','ig'), '$1<span class="operator">$2</span>$3').
+      replace(/(^|<\/[^>]*>|<\/p><p[^>]*>|&quot;|'|&emsp;|\s|[_а-яa-z0-9\s\]\)\(\[])(([\.,\)\(\]\[\+\-\=\*\?\/%]|&lt;|&gt;)+)([_а-яa-z0-9\s;\)\]&]|$|&quot;|'|\s|&emsp;|&semicolon_char;|<[^\/>]*>|<\/p><p[^>]*>)/ig, '$1<span class="sign">$2</span>$4').
+      replace(/(^|<\/[^>]*>|<\/p><p[^>]*>|&quot;|'|\s|&emsp;|[_а-яa-z0-9\s\]\)\(\[])(([\.,\)\(\]\[\+\-\=\*\?\/%]|&lt;|&gt;)+)([_а-яa-z0-9\s;\)\]&]|$|&quot;|'|\s|&emsp;|&semicolon_char;|<[^\/>]*>|<\/p><p[^>]*>)/ig, '$1<span class="sign">$2</span>$4').
+      replace(/&semicolon_char;/ig, '<span class="semicolon">;</span>').
+      replace(/&emsp<span\sclass="semicolon">;<\/span>/g, "&emsp;").
+      replace(/(<p[^>]*>(\s|&emsp;|&shy;)*)(\|(\s|&emsp;)*([^<>]|<span\s+class\s*=\s*"[^'"<>]*"\s*>[^<>]*<\/span>)*?&quot;)/ig, '$1<span class="string">$3</span>').
+      replace(/(&quot;([^<>]|<span\s+class\s*=\s*"[^'"<>]*"\s*>[^<>]*<\/span>)*?&quot;)/ig, '<span class="string">$1</span>').
+      replace(/(&quot;([^<>]|<span\s+class\s*=\s*"[^'"<>]*"\s*>[^<>]*<\/span>)*?)(<\/p>)/ig, '<span class="string">$1</span>$3').
+      replace(/(<p[^>]*>(\s|&emsp;|&shy;)*)(\|(\s|&emsp;)*([^<>]|<span\s+class\s*=\s*"[^'"<>]*"\s*>[^<>]*<\/span>)*?)(<\/p>)/ig, '$1<span class="string">$3</span>$6').
+      replace(/(\s|&emsp;|^|>)(\d+\.?\d*)(<|\s|&emsp;|$)/ig, '$1<span class="number">$2</span>$3').
+      replace(/(\s|&emsp;|^|>)('\d+\.?\d*')(<|\s|&emsp;|$)/ig, '$1<span class="datestring">$2</span>$3').
+      replace(/(<span\s+class\s*=\s*["']?number["']?>\d+)(<\/span><span\s+class\s*=\s*["']?sign["']?>\.<\/span><span\s+class\s*=\s*["']?number["']?>)(\d+<\/span>)/ig, '$1.$3').
+      replace(/( )(?= [^<>]*<)/ig, '&nbsp;') +
+    '</p>').replace(/<p><\/p>/ig, '<p class="empty">&shy;</p>');
+    
+    result = result.replace(/<\/p>/g, '&#x000D;&#x000A;').replace(/<p[^>]*>/g, '').replace(/&shy;/g, '').replace(/&emsp;/g, '&#x0009;');
+    result = '<pre>' + result  + '</pre>';
+    
+  return result;
+}
+
+// -->
+</script>
+<div id="textCode">Ошибка</div>
+<script type=text/javascript>
+<!--
+var elementText = document.getElementById('textCode');
+elementText.innerHTML = textToHtml1CScript(#%&text#%&);
+// -->
+</script>
+</body></html>

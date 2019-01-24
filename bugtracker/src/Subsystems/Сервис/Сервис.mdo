@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="30723cae-34f3-428a-a1d6-a9ad12fb372c">
+  <name>Сервис</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сервис</value>
+  </synonym>
+  <comment></comment>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <picture xsi:type="core:PictureRef">
+    <picture>CommonPicture.РазделАдминистрирование16</picture>
+  </picture>
+  <content>DataProcessor.КонсольЗаданий</content>
+  <content>DataProcessor.КонтролерКода</content>
+  <content>Catalog.Ошибки</content>
+  <content>InformationRegister.Уведомления</content>
+  <content>Catalog.Пользователи</content>
+  <subsystems>Основное</subsystems>
+  <subsystems>Журналы</subsystems>
+</mdclass:Subsystem>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cbab78ad-499d-409b-a814-aa85ae797fd2">
+  <producedTypes>
+    <refType typeId="825e501e-c730-48e9-99fa-e437ad4a4bfb" valueTypeId="72101d1b-1c4e-47b9-b82e-1e333514c378"/>
+    <listType typeId="f2f0fab7-351d-4c22-9b63-b85fc45a9648" valueTypeId="913314f4-d22e-473c-a129-6f6d64878bad"/>
+    <managerType typeId="2e0e8ebc-a9f0-4720-98fb-ba4079be18ba" valueTypeId="b4dfcee7-4b86-4fda-bf6d-1013afdf2f0d"/>
+  </producedTypes>
+  <name>ИнтернетПротокол</name>
+  <synonym>
+    <key>ru</key>
+    <value>Интернет протокол</value>
+  </synonym>
+  <comment></comment>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Order</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <comment></comment>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <quickChoice>true</quickChoice>
+  <choiceMode>BothWays</choiceMode>
+  <enumValues uuid="b07288e5-3aba-4cad-80ec-24377eb3b96f">
+    <name>HTTP</name>
+    <synonym>
+      <key>ru</key>
+      <value>HTTP</value>
+    </synonym>
+    <comment></comment>
+  </enumValues>
+  <enumValues uuid="a1b0cd32-b612-4318-af8c-dec3c6da726d">
+    <name>HTTPS</name>
+    <synonym>
+      <key>ru</key>
+      <value>HTTPS</value>
+    </synonym>
+    <comment></comment>
+  </enumValues>
+</mdclass:Enum>

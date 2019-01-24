@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="19e8f8a6-2f1b-43b3-b91c-99ef51dc226f">
+  <producedTypes>
+    <objectType typeId="92e441d3-7369-4966-b095-b344d3734e64" valueTypeId="4d8b5b17-4fd9-4187-b0a0-bc964cef3286"/>
+    <refType typeId="d8df4a9a-ff95-4179-8d89-783134b1969d" valueTypeId="20ea2806-0605-45f9-b75e-d961c448c95d"/>
+    <selectionType typeId="34cf14a8-fb87-44eb-acdd-f8c66666b517" valueTypeId="789f06ee-f4d3-4ccd-bb8b-8e932a34fed5"/>
+    <listType typeId="506305b7-bd1e-4ab5-8e59-08aba3c96b7d" valueTypeId="95ae2071-d345-4d9a-8ecf-45d9ab444e63"/>
+    <managerType typeId="cefe1aae-6f1e-4bb6-ba46-03f75d5385f9" valueTypeId="d2b55471-ccdf-4c38-b9e0-248b9a2e2073"/>
+  </producedTypes>
+  <name>Пользователи</name>
+  <synonym>
+    <key>ru</key>
+    <value>Пользователи</value>
+  </synonym>
+  <comment></comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.Пользователи.StandardAttribute.Description</inputByString>
+  <inputByString>Catalog.Пользователи.StandardAttribute.Code</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <levelCount>2</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>9</codeLength>
+  <descriptionLength>25</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="86d22093-bd25-47fc-8a90-76c3d6a7b2b2">
+    <name>ИдентификаторИБ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор ИБ</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>64</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="aaf1a216-f512-4a93-8172-a0bb5ccb48f6">
+    <name>JiraUserName</name>
+    <synonym>
+      <key>ru</key>
+      <value>Jira user name</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>25</length>
+      </stringQualifiers>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="8fcee531-2a61-480c-a964-998685310583">
+    <name>JiraUserPass</name>
+    <synonym>
+      <key>ru</key>
+      <value>Jira user pass</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>25</length>
+      </stringQualifiers>
+    </type>
+    <passwordMode>true</passwordMode>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue">
+      <value></value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="04f99a57-1024-4845-90fe-73ad187965d0">
+    <name>НеУчаствуетВПроверкеТекстаКода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не участвует в проверке текста кода</value>
+    </synonym>
+    <comment></comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <mask></mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+</mdclass:Catalog>
